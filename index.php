@@ -1,5 +1,5 @@
 <html>
 <body>
-Future home of hugeduel.com
+Future home of hugeduel.com!
 </body>
 </html>

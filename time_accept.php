@@ -83,6 +83,6 @@ function word_count($theString)
 
 ?>
 <a href="http://hugeduel.com/time_show.php">Show leaderboard</a>
-<a href="http://hugeduel.com/">HugeDuel.com</a>
+<a href="http://hugeduel.com/">HugeDuel.coms</a>
 </body>
 </html>

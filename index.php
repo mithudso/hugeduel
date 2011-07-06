@@ -32,6 +32,9 @@ function showtimer() {
 	document.timeform.timetextarea.value = minutes_passed + ":" + seconds_passed;
 	timedifferenceseconds = timedifference / 1000;
 	document.timeform.secondstextarea.value =  timedifferenceseconds;
+	var wc=wordcount(document.scribble.value);
+	document.timeform.wcarea.value = wc;
+	document.timeform.wpmarea.value = wc*60/timedifferenceseconds;
 	//document.timeform.secondstextarea.value =  timeend.getSeconds();
 	timercount = setTimeout("showtimer()", 1000);
 }
@@ -100,6 +103,12 @@ function Reset() {
 	document.timeform.timetextarea.value = "00:00";
 	document.timeform.laptime.value = "";
 }
+
+function word_count($theString)
+      {
+        return ereg_replace("/  +/"," ",trim($theString)).split(" ").length;
+      }
+
 </SCRIPT>    
 
 </head>
@@ -113,7 +122,7 @@ Name: <input type=text name="name" size="10" style = "font-size:20px"><p>
 <input type="submit" value="Submit" />
 
 <!-- <form name="timeform"  method="post" action="time_accept.php"> -->
-Time: <input type=text name="timetextarea" value="00:00" size="10" style = "font-size:20px"> Lap: <input type=text name="laptime" size="10" style = "font-size:20px"><br>
+Time: <input type=text name="timetextarea" value="00:00" size="10" style = "font-size:20px"> Lap: <input type=text name="laptime" size="10" style = "font-size:20px"> WC: <input type=text name="wcarea" size="10" style = "font-size:20px"><br> WPM: <input type=text name="wpmarea" size="10" style = "font-size:20px"><br>
 <input type=hidden name="secondstextarea" value="0" size="10" style = "font-size:20px">
 <input type=hidden name="secondslaptextarea" value="0" size="10" style = "font-size:20px">
 <input type=button name="start" value="Start/Lap" onclick="sw_start()"> <input type=button name="stop" value="Stop" onclick="Stop()"> <input type=button name="reset" value="Reset" onclick="Reset()">
